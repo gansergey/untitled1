@@ -1,4 +1,4 @@
-package gan.homeworks;
+package gan.homeworks.Race;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -34,6 +34,7 @@ public class MainClass {
         System.out.println("ВАЖНОЕ ОБЪЯВЛЕНИЕ >>> Гонка закончилась!!!");
     }
 }
+
 class Car implements Runnable {
     private static int CARS_COUNT;
     private static final AtomicInteger racePosition = new AtomicInteger();
@@ -85,6 +86,7 @@ class Car implements Runnable {
         }
     }
 }
+
 abstract class Stage {
     protected int length;
     protected String description;
@@ -93,6 +95,7 @@ abstract class Stage {
     }
     public abstract void go(Car c);
 }
+
 class Road extends Stage {
     public Road(int length) {
         this.length = length;
@@ -109,6 +112,7 @@ class Road extends Stage {
         }
     }
 }
+
 class Tunnel extends Stage {
 
     private final Semaphore semaphore;
@@ -139,6 +143,7 @@ class Tunnel extends Stage {
         }
     }
 }
+
 class Race {
     private List<Stage> stages;
     public List<Stage> getStages() { return stages; }
